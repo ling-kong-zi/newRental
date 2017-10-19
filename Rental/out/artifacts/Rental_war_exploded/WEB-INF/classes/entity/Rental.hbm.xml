@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 	如果不配置package属性那么clas标签的name属性必须为POJO类的全限定名 -->
+<hibernate-mapping package="com.rental.entity">
+	<class name="Rental">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<many-to-one name="record" class="Record" column="record_id"></many-to-one>
+		<many-to-one name="customer" class="Customer" column="customer_id"></many-to-one>
+		<property name="num_day"></property>
+		<property name="rental_date"></property>
+		<property name="return_date"></property>
+		<property name="totalMomey"></property>
+		
+	
+	</class>
+
+</hibernate-mapping>

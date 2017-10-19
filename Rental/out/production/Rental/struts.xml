@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8" />
+    <package name="default" namespace="/" extends="struts-default">
+
+        <action name="user!*" class="com.rental.action.UserAction" method="{1}">
+            <result>index.jsp</result>
+            <result name="fail">faill.jsp</result>
+            <result name="register">/admin/zcgly.jsp</result>
+            <result name="zhuxiao">index.jsp</result>
+            <result name="login">login.jsp</result>
+            <result name="test">admin/main.jsp</result>
+        </action>
+        <action name="customer!*" class="com.rental.action.CustomerAction" method="{1}">
+            <result>index.jsp</result>
+            <result name="showCustomer">admin/khgl.jsp</result>
+            <result name="delete" type="redirect">
+                <param name="location">customer!showCustomer</param>
+                <param name="encode">true</param>
+            </result>
+            <result name="id">admin/updatCustomer.jsp</result>
+            <result name="update" type="redirect">
+                <param name="location">customer!showCustomer</param>
+                <param name="encode">true</param>
+            </result>
+            <result name="fai">loginErrorCustomer.jsp</result>
+            <result name="login" type="redirect">
+                <param name="location">record!page</param>
+                <param name="encode">true</param>
+            </result>
+
+        </action>
+        <action name="record!*" class="com.rental.action.RecordAction" method="{1}">
+            <result name="showCar">admin/clcx.jsp</result>
+            <result name="tj" type="redirect">
+                <param name="location">record!showCar</param>
+                <param name="encode">true</param>
+            </result>
+            <interceptor-ref name="fileUpload">
+
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+            <result name="delet" type="redirect">
+                <param name="location">record!showCar</param>
+                <param name="encode">true</param>
+            </result>
+            <result name="cx">admin/updateCar.jsp</result>
+            <result name="updat" type="redirect">
+                <param name="location">record!showCar</param>
+                <param name="encode">true</param>
+            </result>
+            <result name="rentalNow">rentalNow.jsp</result>
+            <result name="register">loginCustomer.jsp</result>
+            <result name="showRental" type="redirect">
+                <param name="location">record!getId</param>
+                <param name="encode">true</param>
+            </result>
+            <result name="page">showModel.jsp</result>
+            <result name="search">search.jsp</result>
+            <result name="noSearch">noSearch.jsp</result>
+        </action>
+        <action name="message!*" class="com.rental.action.MessageAction" method="{1}">
+            <result name="show">message/showMessage.jsp</result>
+            <result name="hf">message/huif.jsp</result>
+            <result name="messageIndex" type="redirect">
+                <param name="location">message!showAll</param>
+                <param name="encode">true</param>
+            </result>
+            <result name="gbook">admin/gbook.jsp</result>
+            <result name="delete" type="redirect">
+                <param name="location">message!gBook</param>
+                <param name="encode">true</param>
+            </result>
+            <result name="login">login.jsp</result>
+            <result name="hfAdmin" type="redirect">
+                <param name="location">message!showAll</param>
+                <param name="encode">true</param>
+            </result>
+        </action>
+        <action name="discount!*" class="com.rental.action.DiscountAction" method="{1}">
+            <result name="discount">zuixingyouhui.jsp</result>
+        </action>
+        <action name="rental!*" class="com.rental.action.RentalAction" method="{1}">
+            <result name="dengji">index.jsp</result>
+
+        </action>
+    </package>
+</struts>

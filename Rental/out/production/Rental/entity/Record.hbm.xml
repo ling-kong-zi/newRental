@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 	如果不配置package属性那么clas标签的name属性必须为POJO类的全限定名 -->
+<hibernate-mapping package="com.rental.entity">
+	<class name="Record">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="car_name"></property>
+		<property name="price_day"></property>
+		<property name="plate_number"></property>
+		<property name="pailiang"></property>
+		<property name="brand"></property>
+		<property name="state"></property>
+		<property name="img"></property>
+	</class>
+</hibernate-mapping>
