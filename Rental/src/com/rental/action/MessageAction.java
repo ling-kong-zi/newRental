@@ -7,6 +7,7 @@ import com.rental.entity.Message;
 import com.rental.entity.User;
 import com.rental.service.MessageService;
 import com.rental.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
 import java.util.List;
@@ -15,10 +16,12 @@ import java.util.Map;
 public class MessageAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
+	@Autowired
 	private MessageService messageService;
 	private Message message;
 	private User user;
 	private Customer customer;
+	@Autowired
 	private UserService userService;
 	
 	public UserService getUserService() {
@@ -46,7 +49,7 @@ public class MessageAction extends ActionSupport {
 	 */
 	public String showAll() throws Exception {
 		List<Message> list= messageService.getMessagesDaoXu();
-		System.out.println(list.get(0));
+//		System.out.println(list.get(0));
 		ActionContext.getContext().put("list", list);
 		return "show";
 		/*ActionContext.getContext().put("list", list);

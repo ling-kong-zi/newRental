@@ -6,7 +6,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
 <%
 	JOptionPane.showMessageDialog(null, "权限不足，请管理员登陆");
-	response.sendRedirect("/Rental/index.jsp");
+	response.sendRedirect("index.jsp");
  %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>

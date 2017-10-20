@@ -5,12 +5,15 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.rental.entity.User;
 import com.rental.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Map;
-
+@Service
 public class UserAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
+	@Autowired
 	private UserService userService;
 	private User user;
 	private String loginerror;

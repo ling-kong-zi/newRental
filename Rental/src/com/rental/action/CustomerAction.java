@@ -5,6 +5,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.rental.entity.Customer;
 import com.rental.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
 import java.util.List;
@@ -12,7 +13,10 @@ import java.util.List;
 public class CustomerAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
+
+	@Autowired
 	private CustomerService customerService;
+
 	private Customer customer;
 	
 	/**

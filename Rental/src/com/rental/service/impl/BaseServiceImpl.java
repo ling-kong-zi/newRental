@@ -2,6 +2,8 @@ package com.rental.service.impl;
 
 import com.rental.dao.BaseDAO;
 import com.rental.service.BaseService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -10,7 +12,9 @@ import java.util.List;
 
 @SuppressWarnings("all")//不处理所有警告
 public class BaseServiceImpl<T> implements BaseService<T>{
+	@Autowired
 	protected BaseDAO<T> baseDAO;
+
 	private Class entityClass;
 	/**
 	 * 重写构造器的目的：获取到之类类型/或者泛型的真实类型

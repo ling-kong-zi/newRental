@@ -2,9 +2,11 @@ package com.rental.service.impl;
 
 import com.rental.entity.Message;
 import com.rental.service.MessageService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class MessageServiceImpl extends BaseServiceImpl<Message> implements MessageService {
 
 //	

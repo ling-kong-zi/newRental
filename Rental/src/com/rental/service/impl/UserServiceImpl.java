@@ -2,9 +2,11 @@ package com.rental.service.impl;
 
 import com.rental.entity.User;
 import com.rental.service.UserService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UserServiceImpl extends BaseServiceImpl<User> implements UserService {
 
 	public User getUserByNameAndPwd(User user) {

@@ -86,7 +86,6 @@
         </action>
         <action name="rental!*" class="com.rental.action.RentalAction" method="{1}">
             <result name="dengji">index.jsp</result>
-
         </action>
     </package>
 </struts>

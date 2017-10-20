@@ -9,17 +9,21 @@ import com.rental.service.CustomerService;
 import com.rental.service.RecordService;
 import com.rental.service.RentalService;
 import com.rental.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
 
 public class RentalAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
+	@Autowired
 	private RentalService rentalService;
 	private Rental rental;
 	private Customer customer;
+	@Autowired
 	private CustomerService customerService;
 	private Record record;
+	@Autowired
 	private RecordService recordService;
 	
 	/**

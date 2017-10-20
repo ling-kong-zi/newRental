@@ -2,9 +2,11 @@ package com.rental.service.impl;
 
 import com.rental.entity.Customer;
 import com.rental.service.CustomerService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CustomerServiceImpl extends BaseServiceImpl<Customer> implements CustomerService {
 
 	

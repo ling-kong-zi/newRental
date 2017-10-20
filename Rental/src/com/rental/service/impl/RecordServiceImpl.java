@@ -2,9 +2,11 @@ package com.rental.service.impl;
 
 import com.rental.entity.Record;
 import com.rental.service.RecordService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class RecordServiceImpl extends BaseServiceImpl<Record> implements RecordService{
 
 	@Override

@@ -1,11 +1,12 @@
 package com.rental.util;
 
 import org.apache.struts2.util.StrutsTypeConverter;
+import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Map;
-
+@Service
 public class DateTimeConverter extends StrutsTypeConverter {
 
 	@Override

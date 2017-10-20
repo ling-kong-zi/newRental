@@ -12,7 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <form action="record!tianjia" method="post" enctype="multipart/form-data">
+  <form action="/record!tianjia.action" method="post" enctype="multipart/form-data">
   <center>
    <table>
     <tr>

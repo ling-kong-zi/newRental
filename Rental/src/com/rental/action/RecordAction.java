@@ -9,6 +9,7 @@ import com.rental.service.CustomerService;
 import com.rental.service.RecordService;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,6 +18,7 @@ import java.util.List;
 public class RecordAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
+	@Autowired
 	private RecordService recordService;
 	private Record rec;
 	
@@ -119,18 +121,29 @@ public class RecordAction extends ActionSupport {
 	 * @return
 	 */
 	public String tianjia() {
-		System.out.println("test");
 		String path= ServletActionContext.getRequest().getRealPath("/")+"upload/";
-		System.out.println(path);
-		File file=new File(path+"/"+fileImgFileName);
-				try {
-					FileUtils.copyFile(fileImg, file);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				record.setImg(fileImgFileName);
-				recordService.save(record);
+		if(null!=fileImg) {
+			upload(path);
+			record.setImg(fileImgFileName);
+		}
+		recordService.save(record);
 				return "tj";
+	}
+
+	/**
+	 * 上传图片
+	 * @param path
+	 * @return
+	 */
+	private boolean upload(String path){
+		File file = new File(path + "/" + fileImgFileName);
+		try {
+			FileUtils.copyFile(fileImg, file);
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 	/**
 	 * 删除车辆信息

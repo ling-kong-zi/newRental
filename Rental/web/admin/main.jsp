@@ -39,7 +39,7 @@ a{
        		
        	</div>
      <div class="con_right" style="width: 77%;height: 600px;float: right;margin-top: -300;">
-    <iframe src="/test.jsp" name="page" width="100%" height="600px" frameborder="0" marginwidth="0" marginheight="0" ></iframe>
+    <iframe src="admin/khgl.jsp" name="page" width="100%" height="600px" frameborder="0" marginwidth="0" marginheight="0" ></iframe>
     </div>
        </div>
         <jsp:include page="/foot.jsp" />

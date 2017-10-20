@@ -28,14 +28,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <form method="post" action="record!page">
      	<c:forEach items="${pages }" var="record">
      	<div style="margin-left: 250px;margin-top: 100px;">
-     		车名：${record.car_name }<br><br>
+			车名：${record.car_name }<br><br>
      		${record.price_day }元/天<br><br>
      		车牌号：${record.plate_number }<br><br>
      		汽车排量：${record.pailiang }（T）<br><br>
      		品牌：${record.brand }<br><br><br>
 			<a href="record!getId?record.id=${record.id }" style="color: blue">现在就租车</a>
      	</div>
-     	<div style="height:300px;margin-left: 600px; margin-top:-280px; width:500"><img src="upload/${record.img }" width="500" height="300"></div>
+     	<div style="height:300px;margin-left: 600px; margin-top:-280px; width:500">
+			<c:if test="${not empty record.img&&record.img!=''}">
+			<img src="upload/${record.img }" width="500" height="300">
+			</c:if>
+		</div>
      		     	<div style="margin-top: 200px;"></div>
      		
     
